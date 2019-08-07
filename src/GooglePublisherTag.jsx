@@ -58,6 +58,7 @@ function initGooglePublisherTag(options?: Object = {}, onInit?: Function): void 
   const googletag = window.googletag = window.googletag || {};
   googletag.cmd = googletag.cmd || [];
 
+  console.log("firstTime", firstTime);
   if (firstTime) {
     googletag.cmd.push(() => {
       if (options.enableSingleRequest) {
@@ -153,6 +154,7 @@ export default class GooglePublisherTag extends PureComponent<Props, State> {
     this.setState({
       bounds: contentRect.bounds,
     }, () => {
+      console.log("handleResize - do update");
       this.update(this.props);
     });
   }
