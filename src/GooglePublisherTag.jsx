@@ -37,6 +37,7 @@ function prepareDimensions(
 }
 
 function loadScript(): void {
+  console.log("load script");
   const js = document.createElement('script');
   js.async = true;
   js.defer = true;
