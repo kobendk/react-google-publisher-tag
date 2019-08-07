@@ -33,6 +33,7 @@ function prepareDimensions(dimensions, format = Format.HORIZONTAL, canBeLower = 
 }
 
 function loadScript() {
+  console.log("load script");
   const js = document.createElement('script');
   js.async = true;
   js.defer = true;
@@ -50,6 +51,7 @@ function initGooglePublisherTag(options = {}, onInit) {
   const firstTime = !window.googletag;
   const googletag = window.googletag = window.googletag || {};
   googletag.cmd = googletag.cmd || [];
+  console.log("firstTime", firstTime);
 
   if (firstTime) {
     googletag.cmd.push(() => {
@@ -120,6 +122,7 @@ export default class GooglePublisherTag extends PureComponent {
       this.setState({
         bounds: contentRect.bounds
       }, () => {
+        console.log("handleResize - do update");
         this.update(this.props);
       });
     });
@@ -171,7 +174,7 @@ export default class GooglePublisherTag extends PureComponent {
 
 
       const adId = id || getNextId();
-      node.innerHTML = `<div id="${adId}"></div>`; // prepare new slot
+      node.innerHTML = `<div id="${adId}"></div><div>ad</div>`; // prepare new slot
 
       const slot = googletag.defineSlot(props.path, availableDimensions, adId);
       this.slot = slot; // set targeting
