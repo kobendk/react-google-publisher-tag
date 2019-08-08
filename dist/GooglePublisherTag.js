@@ -136,8 +136,7 @@ class GooglePublisherTag extends _react.PureComponent {
       this.setState({
         bounds: contentRect.bounds
       }, () => {
-        console.log("handleResize - do update");
-        this.update(this.props);
+        console.log("handleResize - do update"); //this.update(this.props);
       });
     });
     (0, _defineProperty2.default)(this, "update", (0, _debounce.default)(props => {

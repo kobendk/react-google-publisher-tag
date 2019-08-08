@@ -122,8 +122,7 @@ export default class GooglePublisherTag extends PureComponent {
       this.setState({
         bounds: contentRect.bounds
       }, () => {
-        console.log("handleResize - do update");
-        this.update(this.props);
+        console.log("handleResize - do update"); //this.update(this.props);
       });
     });
 
