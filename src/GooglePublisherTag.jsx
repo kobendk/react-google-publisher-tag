@@ -211,7 +211,7 @@ export default class GooglePublisherTag extends PureComponent<Props, State> {
 
     // prepare new node content
     const adId = id || getNextId();
-    node.innerHTML = `<div id="${adId}"></div><div>ad</div>`;
+    node.innerHTML = `<div id="${adId}"></div>`;
 
     // prepare new slot
     const slot = googletag.defineSlot(props.path, availableDimensions, adId);

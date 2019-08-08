@@ -186,7 +186,7 @@ class GooglePublisherTag extends _react.PureComponent {
 
 
       const adId = id || getNextId();
-      node.innerHTML = `<div id="${adId}"></div><div>ad</div>`; // prepare new slot
+      node.innerHTML = `<div id="${adId}"></div>`; // prepare new slot
 
       const slot = googletag.defineSlot(props.path, availableDimensions, adId);
       this.slot = slot; // set targeting
