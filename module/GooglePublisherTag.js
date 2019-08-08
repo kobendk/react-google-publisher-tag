@@ -190,7 +190,8 @@ export default class GooglePublisherTag extends PureComponent {
 
       slot.addService(googletag.pubads()); // display new slot
 
-      googletag.display(adId); //googletag.pubads().refresh([slot]);
+      googletag.display(adId);
+      googletag.pubads().refresh([slot]);
     }, this.props.resizeDebounce));
 
     _defineProperty(this, "handleNode", node => {

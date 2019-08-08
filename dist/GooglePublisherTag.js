@@ -203,7 +203,8 @@ class GooglePublisherTag extends _react.PureComponent {
 
       slot.addService(googletag.pubads()); // display new slot
 
-      googletag.display(adId); //googletag.pubads().refresh([slot]);
+      googletag.display(adId);
+      googletag.pubads().refresh([slot]);
     }, this.props.resizeDebounce));
     (0, _defineProperty2.default)(this, "handleNode", node => {
       this.node = node;
