@@ -69,7 +69,7 @@ function initGooglePublisherTag(options?: Object = {}, onInit?: Function): void 
       // googletag.pubads().collapseEmptyDivs();
 
       // load ad with slot refresh
-      googletag.pubads().disableInitialLoad();
+      //googletag.pubads().disableInitialLoad();
 
       // enable google publisher tag
       googletag.enableServices();
