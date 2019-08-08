@@ -234,7 +234,7 @@ export default class GooglePublisherTag extends PureComponent<Props, State> {
 
     // display new slot
     googletag.display(adId);
-    googletag.pubads().refresh([slot]);
+    //googletag.pubads().refresh([slot]);
   }, this.props.resizeDebounce)
 
   componentDidMount() {
