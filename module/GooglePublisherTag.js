@@ -33,7 +33,6 @@ function prepareDimensions(dimensions, format = Format.HORIZONTAL, canBeLower = 
 }
 
 function loadScript() {
-  console.log("load script");
   const js = document.createElement('script');
   js.async = true;
   js.defer = true;
@@ -51,7 +50,6 @@ function initGooglePublisherTag(options = {}, onInit) {
   const firstTime = !window.googletag;
   const googletag = window.googletag = window.googletag || {};
   googletag.cmd = googletag.cmd || [];
-  console.log("firstTime", firstTime);
 
   if (firstTime) {
     googletag.cmd.push(() => {
@@ -122,7 +120,7 @@ export default class GooglePublisherTag extends PureComponent {
       this.setState({
         bounds: contentRect.bounds
       }, () => {
-        console.log("handleResize - do update"); //this.update(this.props);
+        this.update(this.props);
       });
     });
 
@@ -192,8 +190,7 @@ export default class GooglePublisherTag extends PureComponent {
 
       slot.addService(googletag.pubads()); // display new slot
 
-      googletag.display(adId);
-      googletag.pubads().refresh([slot]);
+      googletag.display(adId); //googletag.pubads().refresh([slot]);
     }, this.props.resizeDebounce));
 
     _defineProperty(this, "handleNode", node => {
